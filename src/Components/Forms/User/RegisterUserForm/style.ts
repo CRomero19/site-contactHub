@@ -6,7 +6,7 @@ export const StyledRegisterForm = styled.div`
   max-width: 90%;
   margin: 0 auto;
   font-family: "Roboto", sans-serif;
-
+  color: var(--color-grey-0);
   h1 {
     margin-bottom: 2rem;
     font-size: 18px;
@@ -22,8 +22,9 @@ export const StyledRegisterForm = styled.div`
   }
 
   p {
-    color: var(--color-secondary);
+    color: var(--color-grey-0);
   }
+
   input {
     border: 1px solid black;
     padding: 20px;
@@ -56,9 +57,9 @@ export const StyledRegisterForm = styled.div`
     top: 33%;
   }
   .link{
-    font-weight: 700;
-    color: var(--color-secondary);
-    font-family: var(--font-family-2);
+    font-weight: 500;
+    color: var(--color-grey-100);
+    text-decoration: underline;
   }
   .yup-error{
     color: var(--color-negative);

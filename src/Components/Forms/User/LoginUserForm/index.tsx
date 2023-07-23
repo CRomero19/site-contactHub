@@ -37,10 +37,10 @@ export const LoginForm = () => {
 
   return (
     <StyledLoginForm>
-      <h1> <strong> Entre e divirta-se!  </strong></h1>
+      <h1>  Entre e divirta-se!  </h1>
       <form action="" onSubmit={handleSubmit(submitLogin)}>
         <label htmlFor="email">
-          Email <span> {errors.email?.message} </span>
+          Email <span className="yup-error"> {errors.email?.message} </span>
         </label>
         <input
           id="email"
@@ -50,7 +50,7 @@ export const LoginForm = () => {
         />
 
         <label htmlFor="password">
-          Senha <span> {errors.password?.message} </span>
+          Senha <span className="yup-error"> {errors.password?.message} </span>
         </label>
         <div className="input-password">
           <input
@@ -63,7 +63,7 @@ export const LoginForm = () => {
             {iconPassword ? <FiEye /> : <FiEyeOff />}
           </button>
         </div>
-        <p> Ainda não é cadastrado? <Link to="/register" className="link"> Cadastre-se por aqui </Link></p>
+        <p> Ainda não é cadastrado? <Link to="/register" className="link"> Clique aqui!</Link></p>
         <ButtonSubmit text={"Entre"} />
       </form>
     </StyledLoginForm>

@@ -1,8 +1,8 @@
 import { yupResolver } from "@hookform/resolvers/yup";
 import { SubmitHandler, useForm } from "react-hook-form";
-import { IRegisterFormData } from "../../Context/types/@types";
-import useAuth from "../../Context/hooks/useAuth";
-import { ButtonSubmit } from "../ButtonSubmit";
+import { IRegisterFormData } from "../../../../Context/types/@types";
+import useAuth from "../../../../Context/hooks/useAuth";
+import { ButtonSubmit } from "../../../ButtonSubmit";
 import { schemaRegisterForm } from "./schema";
 import { StyledRegisterForm } from "./style";
 import { useState } from "react";
@@ -53,7 +53,7 @@ export const RegisterForm = () => {
 
   return (
     <StyledRegisterForm>
-      <h1> <strong> Cadastre-se </strong> </h1>
+      <h1>  Cadastre-se  </h1>
       <form action="" onSubmit={handleSubmit(submitRegister)}>
         <label htmlFor="name">
           Nome completo <span className="yup-error"> {errors.name?.message} </span>
@@ -111,7 +111,7 @@ export const RegisterForm = () => {
             <button onClick={handleToggleConfirmPasswordType} type="button"> {iconConfirmPassword ? <FiEye/> : <FiEyeOff/>} </button>
         </div>
         
-        <p> Já é cadastrado? <Link to="/" className="link"> Se conecte por aqui! </Link></p>
+        <p> Já é cadastrado? <Link to="/" className="link"> Clique aqui! </Link></p>
 
         <ButtonSubmit text={"Cadastre-se"} />
       </form>

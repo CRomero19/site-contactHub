@@ -1,5 +1,5 @@
 import { LoginForm } from "../Forms/User/LoginUserForm";
-import { RegisterForm } from "../RegisterForm";
+import { RegisterForm } from "../Forms/User/RegisterUserForm";
 import { StyledWelcomePage } from "./style";
 
 interface Props {
@@ -12,10 +12,10 @@ export const WelcomePage = ({form}:Props) => {
       
       <div>
         <h1> ContactHub </h1>
-        <p> Simplifique o gerenciamento de contatos com o ContactHub! Cadastre e organize seus contatos em um só lugar, mantendo-se conectado de forma prática. Experimente agora e otimize sua vida digital! </p>
+        <p> Simplifique o gerenciamento de contatos com o ContactHub! Cadastre e organize seus contatos em um só lugar, mantendo-se conectado de forma prática. Experimente agora e otimize sua vida! </p>
       </div>
 
-      <div>
+      <div className="form">
         {
           form == 'login' && <LoginForm/>
         }

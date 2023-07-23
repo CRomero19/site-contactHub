@@ -19,7 +19,7 @@ export const StyledLoginForm = styled.div`
   }
 
   p {
-    color: var(--color-secondary);
+    color: var(--color-grey-100);
   }
   input {
     border: 1px solid black;
@@ -53,8 +53,12 @@ export const StyledLoginForm = styled.div`
     top: 33%;
   }
   .link{
-    font-weight: 700;
-    color: var(--color-secondary);
+    font-weight: 500;
+    color: var(--color-grey-100);
+    text-decoration: underline;
+  }
+  .yup-error{
+    color: var(--color-negative);
   }
   @media (max-width: 1023px) {
     h1 {
