@@ -1243,6 +1243,11 @@
   resolved "https://registry.yarnpkg.com/@eslint/js/-/js-8.44.0.tgz#961a5903c74139390478bdc808bcde3fc45ab7af"
   integrity sha512-Ag+9YM4ocKQx9AarydN0KY2j0ErMHNIocPDrVo8zAE44xLTjEtz81OdR68/cydGtk6m6jDb5Za3r2useMzYmSw==
 
+"@hookform/resolvers@^3.1.1":
+  version "3.1.1"
+  resolved "https://registry.yarnpkg.com/@hookform/resolvers/-/resolvers-3.1.1.tgz#b374d33e356428fff9c6ef3c933441fe15e40784"
+  integrity sha512-tS16bAUkqjITNSvbJuO1x7MXbn7Oe8ZziDTJdA9mMvsoYthnOOiznOTGBYwbdlYBgU+tgpI/BtTU3paRbCuSlg==
+
 "@humanwhocodes/config-array@^0.11.10":
   version "0.11.10"
   resolved "https://registry.yarnpkg.com/@humanwhocodes/config-array/-/config-array-0.11.10.tgz#5a3ffe32cc9306365fb3fd572596cd602d5e12d2"
@@ -1423,6 +1428,13 @@
   version "4.2.0"
   resolved "https://registry.yarnpkg.com/@types/stylis/-/stylis-4.2.0.tgz#199a3f473f0c3a6f6e4e1b17cdbc967f274bdc6b"
   integrity sha512-n4sx2bqL0mW1tvDf/loQ+aMX7GQD3lc3fkCMC55VFNDu/vBOabO+LTIeXKM14xK0ppk5TUGcWRjiSpIlUpghKw==
+
+"@types/yup@^0.32.0":
+  version "0.32.0"
+  resolved "https://registry.yarnpkg.com/@types/yup/-/yup-0.32.0.tgz#2a19c3bbbb3aed1bd755204f83e800f9c95f249a"
+  integrity sha512-Gr2lllWTDxGVYHgWfL8szjdedERpNgm44L9BDL2cmcHG7Bfd6taEpiW3ayMFLaYvlJr/6bFXDJdh6L406AGlFg==
+  dependencies:
+    yup "*"
 
 "@typescript-eslint/eslint-plugin@^6.0.0":
   version "6.1.0"
@@ -2499,6 +2511,11 @@ react-dom@^18.2.0:
     loose-envify "^1.1.0"
     scheduler "^0.23.0"
 
+react-hook-form-resolvers@^0.0.1:
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/react-hook-form-resolvers/-/react-hook-form-resolvers-0.0.1.tgz#bd32d1edacd50fa493fea4571e99a57e716de06e"
+  integrity sha512-9vXRZiAquinGD0QHPsx78e/SRa2+U/N++5OCAUopUJMrj8pdD4ExOE6cHG0APQC+AsaORTKRn7FwqWsBDbghSA==
+
 react-hook-form@^7.45.2:
   version "7.45.2"
   resolved "https://registry.yarnpkg.com/react-hook-form/-/react-hook-form-7.45.2.tgz#c757f3d5e633ccb186443d57c10fc511df35721a"
@@ -2814,7 +2831,7 @@ type-fest@^2.19.0:
   resolved "https://registry.yarnpkg.com/type-fest/-/type-fest-2.19.0.tgz#88068015bb33036a598b952e55e9311a60fd3a9b"
   integrity sha512-RAH822pAdBgcNMAfWnCBU3CFZcfZ/i1eZjwFU/dsLKumyuuP3niueg2UAukXYF0E2AAoc82ZSSf9J0WQBinzHA==
 
-typescript@^5.0.2:
+typescript@^5.1.6:
   version "5.1.6"
   resolved "https://registry.yarnpkg.com/typescript/-/typescript-5.1.6.tgz#02f8ac202b6dad2c0dd5e0913745b47a37998274"
   integrity sha512-zaWCozRZ6DLEWAWFrVDz1H6FVXzUSfTy5FUMWsQlU8Ym5JP9eO4xkTIROFCQvhQf61z6O/G6ugw3SgAnvvm+HA==
@@ -2895,7 +2912,7 @@ yocto-queue@^0.1.0:
   resolved "https://registry.yarnpkg.com/yocto-queue/-/yocto-queue-0.1.0.tgz#0294eb3dee05028d31ee1a5fa2c556a6aaf10a1b"
   integrity sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q==
 
-yup@^1.2.0:
+yup@*, yup@^1.2.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/yup/-/yup-1.2.0.tgz#9e51af0c63bdfc9be0fdc6c10aa0710899d8aff6"
   integrity sha512-PPqYKSAXjpRCgLgLKVGPA33v5c/WgEx3wi6NFjIiegz90zSwyMpvTFp/uGcVnnbx6to28pgnzp/q8ih3QRjLMQ==

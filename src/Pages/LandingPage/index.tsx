@@ -1,9 +1,10 @@
+import { WelcomePage } from "../../Components/WelcomePage";
 import { StyledLandingPage } from "./style";
 
-export const LandingPage = () => {
+export const LandingLoginPage = () => {
   return (
     <StyledLandingPage>
-      <h1> LandingPage </h1>
+      <WelcomePage form={"login"}/>
     </StyledLandingPage>
   );
 };

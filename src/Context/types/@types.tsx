@@ -19,7 +19,7 @@ export interface IRegisterFormData {
   name: string;
   password: string;
   email: string;
-  dateBirth: string;
+  telefone: string;
   confirmPassword: string;
 }
 
