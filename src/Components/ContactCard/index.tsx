@@ -1,12 +1,17 @@
+import { ContactType } from "../../Context/types/@types";
 import { StyledContactCard } from "./style";
 
-export const ContactCard = () => {
+interface Props {
+  contactInfo: ContactType;
+}
+
+export const ContactCard = ({contactInfo}:Props) => {
   
   return (
     <StyledContactCard>
-        <p> Nome </p> 
-        <p> +553399205945 </p>
-        <p> Email@mail.com</p>
+        <p> {contactInfo.name} </p> 
+        <p> {contactInfo.telefone} </p>
+        <p> {contactInfo.email}</p>
         <button> Edit </button>
     </StyledContactCard>
   );

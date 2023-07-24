@@ -73,18 +73,23 @@ export const UserProvider = ({ children }: IChildrenProps) => {
     navigate("/");
   };
 
-  /* CONTACT CONTEXT */
-
   const handleSubmitRegisterNewContact = async (formData: IRegisterNewContactFormData ) => {
     notifyLoading("Registrando cadastro no servidor...");
+    const token = localStorage.getItem("@USERTOKEN");
+
     try {
-      await baseURL.post("/users", formData);
+      await baseURL.post("/contacts", formData, {
+        headers: {
+            Authorization: `Bearer ${token}`,
+        },
+      });
       notifySuccess("Cadastro realizado com sucesso!");
-      navigate(`/`);
+      navigate(`/contacts`);
     } catch (error) {
       notifyFailed("Ocorreu um erro ao realizar o cadastro! Tente novamente.");
     }
   };
+
   return (
     <UserContext.Provider
       value={{

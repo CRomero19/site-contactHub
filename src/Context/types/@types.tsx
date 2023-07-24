@@ -40,3 +40,10 @@ export interface IRegisterNewContactFormData {
   email: string;
   telefone: string;
 }
+
+export interface ContactType {
+  id: number;
+  name: string;
+  email: string;
+  telefone: string;
+}
