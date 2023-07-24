@@ -32,3 +32,11 @@ export interface IUpdateUserFormData {
   email: string;
   password: string;
 }
+
+/* contact */
+
+export interface IRegisterNewContactFormData {
+  name: string;
+  email: string;
+  telefone: string;
+}

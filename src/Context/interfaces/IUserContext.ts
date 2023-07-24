@@ -1,4 +1,4 @@
-import { ILoginFormData, IRegisterFormData, IUser } from "../types/@types";
+import { ILoginFormData, IRegisterFormData, IRegisterNewContactFormData, IUser } from "../types/@types";
 
 export interface IUserContext {
   user?: IUser | null | undefined;
@@ -6,4 +6,5 @@ export interface IUserContext {
   handleSubmitLogin: (formData: ILoginFormData) => Promise<void>;
   handleSubmitRegister: (formData: IRegisterFormData) => Promise<void>;
   handleLogout: () => void;
+  handleSubmitRegisterNewContact: (formData: IRegisterNewContactFormData ) => Promise<void>;
 }

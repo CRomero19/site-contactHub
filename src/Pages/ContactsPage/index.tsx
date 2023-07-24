@@ -14,7 +14,7 @@ export const ContactsPage = () => {
           user?
           <span> {user.name}!</span>
           :
-          <span> VA SE FUDER!</span>
+          <span> usuario</span>
         }</h1>
       </div>
       

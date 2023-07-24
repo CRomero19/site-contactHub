@@ -2,7 +2,7 @@ import { createContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { baseURL } from "../../Services/api";
 import { IUserContext } from "../interfaces/IUserContext";
-import { IChildrenProps, ILoginFormData, IRegisterFormData, IUser} from "../types/@types";
+import { IChildrenProps, ILoginFormData, IRegisterFormData, IRegisterNewContactFormData, IUser} from "../types/@types";
 import { notifyFailed, notifyLoading, notifySuccess } from "../../Notifications/notifications";
 
 export const UserContext = createContext({} as IUserContext);
@@ -47,7 +47,7 @@ export const UserProvider = ({ children }: IChildrenProps) => {
 
       setUserId(iduser);
       
-      navigate(`/contacts`);
+      navigate(`/welcomeuser`);
     } catch (error) {
       notifyFailed(
         "Ocorreu um erro ao validar suas credenciais! Tente novamente."
@@ -73,6 +73,18 @@ export const UserProvider = ({ children }: IChildrenProps) => {
     navigate("/");
   };
 
+  /* CONTACT CONTEXT */
+
+  const handleSubmitRegisterNewContact = async (formData: IRegisterNewContactFormData ) => {
+    notifyLoading("Registrando cadastro no servidor...");
+    try {
+      await baseURL.post("/users", formData);
+      notifySuccess("Cadastro realizado com sucesso!");
+      navigate(`/`);
+    } catch (error) {
+      notifyFailed("Ocorreu um erro ao realizar o cadastro! Tente novamente.");
+    }
+  };
   return (
     <UserContext.Provider
       value={{
@@ -81,6 +93,7 @@ export const UserProvider = ({ children }: IChildrenProps) => {
         handleSubmitLogin,
         handleSubmitRegister,
         handleLogout,
+        handleSubmitRegisterNewContact
       }}
     >
       {children}

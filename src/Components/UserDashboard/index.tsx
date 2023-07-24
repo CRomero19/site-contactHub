@@ -15,7 +15,7 @@ export const UserDashboard = ({ style }: HeaderProps) => {
   const navigate = useNavigate();
 
   const goToHome = () => {
-    navigate("/contacts");
+    navigate("/welcomeuser");
   };
   
   return (
