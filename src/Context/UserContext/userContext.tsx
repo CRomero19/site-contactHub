@@ -9,7 +9,7 @@ export const UserContext = createContext({} as IUserContext);
 
 export const UserProvider = ({ children }: IChildrenProps) => {
   const [userId, setUserId] = useState<number>(0);
-  const [user, setUser] = useState<IUser>()
+  const [user, setUser] = useState(null as IUser | null);
   const navigate = useNavigate();
 
   const autoLogin = async () => {
@@ -21,10 +21,8 @@ export const UserProvider = ({ children }: IChildrenProps) => {
                 Authorization: `Bearer ${token}`,
             },
         });
-        console.log('ESTÁ CHEGANDO AQUI2')
         console.log(response.data)
         setUser(response.data);
-        navigate("/");
     } catch (error) {
         localStorage.removeItem("@USERTOKEN");
         localStorage.removeItem("@USERID");
@@ -32,7 +30,6 @@ export const UserProvider = ({ children }: IChildrenProps) => {
   };
 
   useEffect(() => {
-      console.log('ESTÁ CHEGANDO AQUI1')
       const token = localStorage.getItem("@USERTOKEN");
       if (token) {
           autoLogin();

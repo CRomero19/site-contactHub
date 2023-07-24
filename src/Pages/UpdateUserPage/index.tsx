@@ -1,10 +1,10 @@
-import { Header } from "../../Components/Header";
+import { UserDashboard } from "../../Components/UserDashboard";
 import { StyledUpdateUser } from "./style";
 
 export const UpdateUserPage = () => {
   return (
     <StyledUpdateUser>
-      <Header/>
+      <UserDashboard/>
       <h1> Pagina de atualização de usuário </h1>
     </StyledUpdateUser>
   );

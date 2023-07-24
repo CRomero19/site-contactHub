@@ -9,24 +9,16 @@ export const StyledHeader = styled.header`
     
     height: 10vh;
 
-    position: sticky;
+    position: absolute;
     top: 0;
-    z-index: 10;
+    z-index: 2;
 
-    background-color: var(--color-grey-0);
     font-family: var(--font-family-2);
 
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-    
-    img {
-        max-width: 5rem;
+    background-color: var(--color-grey-0);
+    .logo{
         cursor: pointer;
-        max-height: 9vh;
-        transition: 400ms;
-    }
-    img:hover{
-        transform: scale(1.1);
-        
     }
 
     .hamburger{
@@ -35,14 +27,8 @@ export const StyledHeader = styled.header`
 
     @media (max-width:1023px) {
         
-       img {
-        position: absolute;
-        left: 5%;
-       }
         .hamburger{
             display: block;
-            position: absolute;
-            right: 5%;
             cursor: pointer;
         }
         nav{
@@ -54,7 +40,7 @@ export const StyledHeader = styled.header`
             right: 0px;
             top: 10vh;
 
-            width: 100%;
+            width: 100vw;
             height: 100vh;
 
             a{
