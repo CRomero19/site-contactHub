@@ -1,13 +1,17 @@
 export interface IChildrenProps {
   children: React.ReactNode;
 }
+export interface IUserResponse{
+  token:string;
+  userId:number;
+}
 
 export interface IUser {
   id: number | null | undefined;
   email: string;
   name: string;
-  dateBirth?: string;
-  isPremium: boolean;
+  telefone:string;
+  admin:boolean;
 }
 
 export interface ILoginFormData {
