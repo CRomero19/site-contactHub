@@ -2,7 +2,7 @@ import { createContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { baseURL } from "../../Services/api";
 import { IUserContext } from "../interfaces/IUserContext";
-import { IChildrenProps, ILoginFormData, IRegisterFormData, IRegisterNewContactFormData, IUser} from "../types/@types";
+import { IChildrenProps, ILoginFormData, IRegisterFormData, IRegisterNewContactFormData, IUpdateUserFormData, IUser} from "../types/@types";
 import { notifyFailed, notifyLoading, notifySuccess } from "../../Notifications/notifications";
 
 export const UserContext = createContext({} as IUserContext);
@@ -21,7 +21,6 @@ export const UserProvider = ({ children }: IChildrenProps) => {
                 Authorization: `Bearer ${token}`,
             },
         });
-        console.log(response.data)
         setUser(response.data);
     } catch (error) {
         localStorage.removeItem("@USERTOKEN");
@@ -54,6 +53,19 @@ export const UserProvider = ({ children }: IChildrenProps) => {
       );
     }
   };
+
+  const handleUpdateUser = async (formData: IUpdateUserFormData) => {
+    const iduser = localStorage.getItem("@USERID")
+    notifyLoading("Atualizando dados...");
+    try {
+      const response = await baseURL.post(`/users/:${iduser}`, formData);
+      notifySuccess("Atualizamos seus dados!");
+      setUser(response.data)
+      navigate(`/updateuser`);
+    } catch (error) {
+      notifyFailed("Tente novamente mais tarde!");
+    }
+  }; 
 
   const handleSubmitRegister = async (formData: IRegisterFormData) => {
     notifyLoading("Registrando cadastro no servidor...");
@@ -97,6 +109,7 @@ export const UserProvider = ({ children }: IChildrenProps) => {
         userId,
         handleSubmitLogin,
         handleSubmitRegister,
+        handleUpdateUser,
         handleLogout,
         handleSubmitRegisterNewContact
       }}

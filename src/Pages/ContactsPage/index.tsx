@@ -29,7 +29,6 @@ export const ContactsPage = () => {
     };
       getUserContacts();
   }, []);
-  console.log(contacts)
   return (
     <StyledContactPage>
       <div>

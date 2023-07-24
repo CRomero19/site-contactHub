@@ -9,10 +9,10 @@ export const NavBar = () => {
   return (
     <StyledNavBar>
       <ul>
-        <li onClick={menuVisibility}> <Link to="/contacts"> Gerenciar contatos </Link> </li>
-        <li onClick={menuVisibility}> <Link to="/registercontact"> Novo contato </Link> </li>
-        <li onClick={menuVisibility}> <Link to="/updateuser"> Minhas informações </Link> </li>
-        <li onClick={menuVisibility}> <button type="button" className="btn-logout"> <FaSignOutAlt/> </button> </li>
+        <li onClick={innerWidth < 1024 ? menuVisibility : undefined}> <Link to="/contacts"> Gerenciar contatos </Link> </li>
+        <li onClick={innerWidth < 1024 ? menuVisibility : undefined}> <Link to="/registercontact"> Novo contato </Link> </li>
+        <li onClick={innerWidth < 1024 ? menuVisibility : undefined}> <Link to="/updateuser"> Minhas informações </Link> </li>
+        <li> <button type="button" className="btn-logout" onClick={innerWidth < 1024 ? menuVisibility : undefined}> <FaSignOutAlt/> </button> </li>
       </ul>
     </StyledNavBar>
   );

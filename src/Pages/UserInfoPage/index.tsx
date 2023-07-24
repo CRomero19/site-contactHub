@@ -1,18 +1,61 @@
+import { useState } from "react";
+import { ModalDeleteUser } from "../../Components/ModalDeleteUser";
 import { UserDashboard } from "../../Components/UserDashboard";
 import { StyledUserInfoPage  } from "./style";
+import useAuth from "../../Context/hooks/useAuth";
+import { ModalUpdateUser } from "../../Components/ModalUpdateUser";
 
 export const UserInfoPage = () => {
+
+  const { user } = useAuth();
+
+  const [modalDeleteUserVisibility, setModalDeleteUserVisibility] = useState("hidden-modal-delete");
+
+  const handleVisibilityDeleteModal  = () => {
+      modalDeleteUserVisibility == "hidden-modal-delete"
+      ? setModalDeleteUserVisibility("visible-modal-delete")
+      : setModalDeleteUserVisibility("hidden-modal-delete");
+  };
+
+  const [modalUpdateUserVisibility, setModalUpdateUserVisibility] = useState("hidden-modal-update");
+
+  const handleVisibilityUpdateModal  = () => {
+    modalUpdateUserVisibility == "hidden-modal-update"
+      ? setModalUpdateUserVisibility("visible-modal-update")
+      : setModalUpdateUserVisibility("hidden-modal-update");
+  };
+
   return (
     <StyledUserInfoPage >
+
       <UserDashboard/>
+
       <div className="container__user-info">
         <h1> Suas informações </h1>
-        <p> César Romero do Carmo Júnior </p>
-        <p> roner@mail.com </p>
-        <p> 33999205945 </p>
-        <button> Atualizar </button>
-        <button> Deletar conta </button>
+        {
+          user?
+          <div>
+            <p> {user.name} </p>
+            <p> {user.email} </p>
+            <p> {user.telefone} </p>
+          </div>
+          :
+          <p>carregando...</p>
+        }
+
+        <button onClick={handleVisibilityUpdateModal}> Atualizar Informações </button>
+        <button onClick={handleVisibilityDeleteModal}> Deletar conta </button>
+
       </div>
+
+      <div className={modalDeleteUserVisibility}>
+        <ModalDeleteUser setVisibility={handleVisibilityDeleteModal}/>
+      </div>
+      
+      <div className={modalUpdateUserVisibility}>
+        <ModalUpdateUser setVisibility={handleVisibilityUpdateModal}/>
+      </div>
+
     </StyledUserInfoPage >
   );
 };

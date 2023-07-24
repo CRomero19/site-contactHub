@@ -7,7 +7,18 @@ export const StyledUserInfoPage  = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-
+  .hidden-modal-delete{
+    display: none;
+  }
+  .visible-modal-delete{
+    display: flex;
+  }
+  .hidden-modal-update{
+    display: none;
+  }
+  .visible-modal-update{
+    display: flex;
+  }
 .container__user-info{
     display: flex;
     flex-direction: column;

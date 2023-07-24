@@ -28,9 +28,9 @@ export interface IRegisterFormData {
 }
 
 export interface IUpdateUserFormData {
-  name: string;
-  email: string;
-  password: string;
+  name?: string;
+  email?: string;
+  telefone?: string;
 }
 
 /* contact */
