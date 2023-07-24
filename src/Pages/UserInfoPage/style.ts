@@ -19,9 +19,13 @@ export const StyledUserInfoPage  = styled.div`
   .visible-modal-update{
     display: flex;
   }
-.container__user-info{
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
+  .container__user-info{
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+  }
+  .container__user-info p{
+    align-self: center;
+    justify-self: center;
+  }
 `;

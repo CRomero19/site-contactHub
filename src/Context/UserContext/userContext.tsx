@@ -12,27 +12,26 @@ export const UserProvider = ({ children }: IChildrenProps) => {
   const [user, setUser] = useState(null as IUser | null);
   const navigate = useNavigate();
 
-  const autoLogin = async () => {
-    const token = localStorage.getItem("@USERTOKEN")
-    const iduser = localStorage.getItem("@USERID")
-    try {
-        const response = await baseURL.get(`/users/${iduser}/`, {
-            headers: {
-                Authorization: `Bearer ${token}`,
-            },
-        });
-        setUser(response.data);
-    } catch (error) {
-        localStorage.removeItem("@USERTOKEN");
-        localStorage.removeItem("@USERID");
-    }
-  };
-
   useEffect(() => {
-      const token = localStorage.getItem("@USERTOKEN");
-      if (token) {
-          autoLogin();
+    const autoLogin = async () => {
+      const token = localStorage.getItem("@USERTOKEN")
+      const iduser = localStorage.getItem("@USERID")
+      try {
+          const response = await baseURL.get(`/users/${iduser}/`, {
+              headers: {
+                  Authorization: `Bearer ${token}`,
+              },
+          });
+          setUser(response.data);
+      } catch (error) {
+          localStorage.removeItem("@USERTOKEN");
+          localStorage.removeItem("@USERID");
       }
+    };
+    const token = localStorage.getItem("@USERTOKEN")
+    if (token) {
+          autoLogin();
+    }
   }, []);
 
   const handleSubmitLogin = async (formData: ILoginFormData) => {
