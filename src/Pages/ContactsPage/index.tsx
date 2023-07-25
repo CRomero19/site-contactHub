@@ -2,34 +2,12 @@ import { StyledContactPage } from "./style";
 import useAuth from "../../Context/hooks/useAuth";
 import { UserDashboard } from "../../Components/UserDashboard";
 import { ContactCard } from "../../Components/ContactCard";
-import { useEffect, useState } from "react";
-import { baseURL } from "../../Services/api";
-import { ContactType } from "../../Context/types/@types";
-import { ModalUpdateContact } from "../../Components/ModalUpdateContact";
-import { ModalDeleteContact } from "../../Components/ModalDeleteContact";
+import useContacts from "../../Context/hooks/useContacts";
 
 export const ContactsPage = () => {
 
   const { user } = useAuth();
-  const [contacts, setContacts] = useState<ContactType[]>([]);
-
-  useEffect(() => {
-    const getUserContacts = async () => {
-      const token = localStorage.getItem("@USERTOKEN")
-      const iduser = localStorage.getItem("@USERID")
-      try {
-          const response = await baseURL.get(`/users/${iduser}/contacts`, {
-              headers: {
-                  Authorization: `Bearer ${token}`,
-              },
-          });
-          setContacts(response.data)
-      } catch (error) {
-          console.log(error)
-      }
-    };
-      getUserContacts();
-  }, []);
+  const { contacts }= useContacts()
 
   return (
     <StyledContactPage>
@@ -43,7 +21,7 @@ export const ContactsPage = () => {
       </div>
 
       <div>
-        {contacts.length > 0 ? 
+        { contacts!.length > 0  ? 
           <p> Contatos registrados:</p>  
           :
           <p> Ainda não há contatos registrados</p>
