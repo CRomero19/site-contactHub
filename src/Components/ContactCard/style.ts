@@ -14,6 +14,19 @@ export const StyledContactCard = styled.div`
 
     font-family: var(--font-family-default);
     
+    .hidden-modal-update-contact{
+        display: none;
+    }
+    .visible-modal-update-contact{
+        display: flex;
+    }
+    .hidden-modal-delete-contact{
+        display: none;
+    }
+    .visible-modal-delete-contact{
+        display: flex;
+    }
+    
     p{
       min-width: 30%;
     }

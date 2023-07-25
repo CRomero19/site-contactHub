@@ -108,6 +108,7 @@ export const UserProvider = ({ children }: IChildrenProps) => {
     navigate("/");
   };
 
+  /*  CONTACTS   */
   const handleSubmitRegisterNewContact = async (formData: IRegisterNewContactFormData ) => {
     const token = localStorage.getItem("@USERTOKEN");
 
@@ -124,6 +125,39 @@ export const UserProvider = ({ children }: IChildrenProps) => {
     }
   };
 
+  const handleUpdateContact = async (contactId:number,formData: IUpdateUserFormData) => {
+    const token = localStorage.getItem("@USERTOKEN")
+    const userId = localStorage.getItem("@USERID")
+    try {
+      const response = await baseURL.patch(`/contacts/${contactId}/users/${userId}`, formData, {
+        headers: {
+            Authorization: `Bearer ${token}`,
+        },
+      });
+      notifySuccess("Atualizamos os dados!");
+      /* atualizar os contatos no react */
+    } catch (error) {
+      notifyFailed("Tente novamente mais tarde!");
+    }
+  }; 
+
+  const handleDeleteContact = async (contactId:number) => {
+    const userId = localStorage.getItem("@USERID")
+    const token = localStorage.getItem("@USERTOKEN")
+    try {
+      await baseURL.delete(`/contacts/${contactId}/users/${userId}`,{
+        headers: {
+            Authorization: `Bearer ${token}`,
+        },
+      });
+      notifySuccess("Contato deletado.");
+      /* SETAR OS CONTATOS NO REACT */
+    } catch (error) {
+      notifyFailed("Ocorreu um erro ao realizar a deleção, tente mais tarde!");
+    }
+  };
+
+
   return (
     <UserContext.Provider
       value={{
@@ -134,7 +168,9 @@ export const UserProvider = ({ children }: IChildrenProps) => {
         handleUpdateUser,
         handleLogout,
         handleSubmitRegisterNewContact,
-        handleDeleteAccount
+        handleDeleteAccount,
+        handleUpdateContact,
+        handleDeleteContact
       }}
     >
       {children}

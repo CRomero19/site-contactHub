@@ -5,6 +5,8 @@ import { ContactCard } from "../../Components/ContactCard";
 import { useEffect, useState } from "react";
 import { baseURL } from "../../Services/api";
 import { ContactType } from "../../Context/types/@types";
+import { ModalUpdateContact } from "../../Components/ModalUpdateContact";
+import { ModalDeleteContact } from "../../Components/ModalDeleteContact";
 
 export const ContactsPage = () => {
 
@@ -28,6 +30,7 @@ export const ContactsPage = () => {
     };
       getUserContacts();
   }, []);
+
   return (
     <StyledContactPage>
       <div>
@@ -50,14 +53,16 @@ export const ContactsPage = () => {
         {
           contacts ?
           contacts.map((contact) => (
-            <li key={contact.id}> <ContactCard contactInfo={contact} /> </li>
+            <li key={contact.id}> <ContactCard contactInfo={contact}/> </li>
           ))
           :
           <p> Carregando...</p>
         }
         </ul>
       </div>
+
       <UserDashboard/>
+
     </StyledContactPage>
   );
 }; 

@@ -8,6 +8,7 @@ export const StyledContactPage = styled.div`
     align-items: center;
     justify-content: center;
     font-family: var(--font-family-default);
+
     .container__contacts-list{
         display: flex;
         flex-direction: column;
