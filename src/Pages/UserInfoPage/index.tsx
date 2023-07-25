@@ -4,7 +4,6 @@ import { UserDashboard } from "../../Components/UserDashboard";
 import { StyledUserInfoPage  } from "./style";
 import useAuth from "../../Context/hooks/useAuth";
 import { ModalUpdateUser } from "../../Components/ModalUpdateUser";
-import { ClapSpinner } from "react-spinners-kit"
 
 export const UserInfoPage = () => {
 
@@ -41,7 +40,7 @@ export const UserInfoPage = () => {
             <p> {user.telefone} </p>
           </div>
           :
-          <p><ClapSpinner size={15}/></p>
+          <p>Carregando...</p>
         }
 
         <button onClick={handleVisibilityUpdateModal}> Atualizar Informações </button>

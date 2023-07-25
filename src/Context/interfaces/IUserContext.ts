@@ -8,4 +8,5 @@ export interface IUserContext {
   handleLogout: () => void;
   handleSubmitRegisterNewContact: (formData: IRegisterNewContactFormData ) => Promise<void>;
   handleUpdateUser:(formData: IUpdateUserFormData ) => Promise<void>;
+  handleDeleteAccount:()=>Promise<void>;
 }

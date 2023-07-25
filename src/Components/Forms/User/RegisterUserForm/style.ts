@@ -5,7 +5,7 @@ export const StyledRegisterForm = styled.div`
   width: 500px;
   max-width: 90%;
   margin: 0 auto;
-  font-family: "Roboto", sans-serif;
+  font-family: var(--font-family-default);
   color: var(--color-grey-0);
   h1 {
     margin-bottom: 2rem;

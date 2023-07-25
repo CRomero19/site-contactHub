@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const StyledNavBar = styled.nav`
 
   gap: 1rem;
-  font-family: var(--font-family-2);
+  font-family: var(--font-family-default);
 
   ul{
     display: flex;

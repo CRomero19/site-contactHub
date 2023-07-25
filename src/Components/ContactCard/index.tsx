@@ -12,7 +12,7 @@ export const ContactCard = ({contactInfo}:Props) => {
         <p> {contactInfo.name} </p> 
         <p> {contactInfo.telefone} </p>
         <p> {contactInfo.email}</p>
-        <button> Edit </button>
+        <div> <button> Edit </button> <button>delete</button></div>
     </StyledContactCard>
   );
 };

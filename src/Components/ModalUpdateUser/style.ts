@@ -12,7 +12,7 @@ export const StyledModalUpdateUser = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  
+  font-family: var(--font-family-default);
   .container__modal{
     background-color: white;
     padding: 50px;

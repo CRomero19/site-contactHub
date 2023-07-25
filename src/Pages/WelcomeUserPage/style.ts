@@ -5,6 +5,14 @@ export const StyledWelcomeUserPage = styled.div`
 
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
+
+    line-height: 200%;
+
+    font-family: var(--font-family-default);
+    .container__greetings{
+ 
+        width: 80%;
+        margin: 10px auto;
+    }
+
 `;

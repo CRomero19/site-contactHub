@@ -8,7 +8,7 @@ export const StyledButton = styled.button`
   background-color:#F26363;
   padding: 10px;
   font-weight: 500;
-  font-family: "Roboto", sans-serif;
+  font-family: var(--font-family-default);
   transition: 400ms;
   &&:hover {
     box-shadow: 1px 1px 6px 0px rgba(0, 0, 0, 0.5);

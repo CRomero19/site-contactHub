@@ -7,6 +7,7 @@ export const StyledUserInfoPage  = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  font-family: var(--font-family-default);
   .hidden-modal-delete{
     display: none;
   }

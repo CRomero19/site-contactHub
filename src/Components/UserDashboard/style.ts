@@ -13,7 +13,7 @@ export const StyledHeader = styled.header`
     top: 0;
     z-index: 2;
 
-    font-family: var(--font-family-2);
+    font-family: var(--font-family-default);
 
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
     background-color: var(--color-grey-0);

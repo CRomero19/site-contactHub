@@ -8,7 +8,7 @@ export const StyledWelcomePage = styled.div`
     align-items: center;
     justify-content: center;
     gap: 50px;
-
+    font-family: var(--font-family-default);
     div{
         max-width: 600px;
     }

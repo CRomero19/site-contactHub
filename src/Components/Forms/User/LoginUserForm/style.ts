@@ -5,7 +5,7 @@ export const StyledLoginForm = styled.div`
   width: 500px;
   max-width: 90%;
   margin: 0 auto;
-  font-family: "Roboto", sans-serif;
+  font-family: var(--font-family-default);
   h1 {
     margin-bottom: 2rem;
     font-size: 18px;

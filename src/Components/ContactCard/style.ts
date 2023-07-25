@@ -2,13 +2,21 @@ import styled from "styled-components";
 
 export const StyledContactCard = styled.div`
     display: flex;
-    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+    gap:15px;
+
     background-color:var(--color-primary-lighter);
     color: var(--color-grey-300);
+
     padding: 15px;
-    gap: 20px;
     max-width: 90vw;
-  
+
+    font-family: var(--font-family-default);
+    
+    p{
+      min-width: 30%;
+    }
   @media (max-width: 1023px) {
     
   }

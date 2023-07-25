@@ -5,7 +5,6 @@ import { ContactCard } from "../../Components/ContactCard";
 import { useEffect, useState } from "react";
 import { baseURL } from "../../Services/api";
 import { ContactType } from "../../Context/types/@types";
-import { ClapSpinner } from "react-spinners-kit"
 
 export const ContactsPage = () => {
 
@@ -41,7 +40,11 @@ export const ContactsPage = () => {
       </div>
 
       <div>
-        <h2>Contatos registrados:</h2>
+        {contacts.length > 0 ? 
+          <p> Contatos registrados:</p>  
+          :
+          <p> Ainda não há contatos registrados</p>
+        }
         
         <ul className="container__contacts-list">
         {
@@ -50,7 +53,7 @@ export const ContactsPage = () => {
             <li key={contact.id}> <ContactCard contactInfo={contact} /> </li>
           ))
           :
-          <ClapSpinner size={60}/>
+          <p> Carregando...</p>
         }
         </ul>
       </div>
