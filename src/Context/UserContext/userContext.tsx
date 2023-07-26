@@ -2,7 +2,7 @@ import { createContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { baseURL } from "../../Services/api";
 import { IUserContext } from "../interfaces/IUserContext";
-import { IChildrenProps, ILoginFormData, IRegisterFormData, IRegisterNewContactFormData, IUpdateUserFormData, IUser} from "../types/@types";
+import { IChildrenProps, ILoginFormData, IRegisterFormData, IUpdateUserFormData, IUser} from "../types/@types";
 import { notifyFailed, notifySuccess } from "../../Notifications/notifications";
 
 export const UserContext = createContext({} as IUserContext);
