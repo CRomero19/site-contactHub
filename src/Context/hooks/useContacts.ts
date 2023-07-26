@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { ContactsContext } from "../ContactsContext/contactsContext";
 
-export default function useAuth() {
+export default function useContact() {
   return useContext(ContactsContext);
 }

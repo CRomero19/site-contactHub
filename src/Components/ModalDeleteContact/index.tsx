@@ -1,4 +1,4 @@
-import useAuth from "../../Context/hooks/useAuth";
+import useContact from "../../Context/hooks/useContacts";
 import { StyledModalDeleteUser } from "./style";
 
 interface Props {
@@ -7,7 +7,7 @@ interface Props {
 }
 
 export const ModalDeleteContact = ({setVisibility,contactId}:Props) => {
-   const {handleDeleteContact} = useAuth()
+   const {handleDeleteContact} = useContact()
 
    const hendleClickYes = () =>{
     handleDeleteContact(contactId)

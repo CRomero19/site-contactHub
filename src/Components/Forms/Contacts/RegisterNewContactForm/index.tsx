@@ -1,13 +1,13 @@
 import { yupResolver } from "@hookform/resolvers/yup";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { IRegisterNewContactFormData } from "../../../../Context/types/@types";
-import useAuth from "../../../../Context/hooks/useAuth";
 import { ButtonSubmit } from "../../../ButtonSubmit";
 import { schemaRegisterForm } from "./schema";
 import { StyledRegisterForm } from "./style";
+import useContact from "../../../../Context/hooks/useContacts";
 
 export const RegisterNewContactForm = () => {
-  const { handleSubmitRegisterNewContact } = useAuth();
+  const { handleSubmitRegisterNewContact } = useContact()
 
   const {
     register,

@@ -6,9 +6,7 @@ export interface IUserContext {
   handleSubmitLogin: (formData: ILoginFormData) => Promise<void>;
   handleSubmitRegister: (formData: IRegisterFormData) => Promise<void>;
   handleLogout: () => void;
-  handleSubmitRegisterNewContact: (formData: IRegisterNewContactFormData ) => Promise<void>;
   handleUpdateUser:(formData: IUpdateUserFormData ) => Promise<void>;
   handleDeleteAccount:()=>Promise<void>;
-  handleUpdateContact:(contactId:number,formData: IUpdateUserFormData ) => Promise<void>;
-  handleDeleteContact:(contactId:number)=>Promise<void>;
+
 }

@@ -1,17 +1,17 @@
 import { yupResolver } from "@hookform/resolvers/yup";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { IUpdateUserFormData } from "../../../../Context/types/@types";
-import useAuth from "../../../../Context/hooks/useAuth";
 import { ButtonSubmit } from "../../../ButtonSubmit";
 import { schemaUpdateForm } from "./schema";
 import { StyledUpdateContactForm } from "./style";
+import useContact from "../../../../Context/hooks/useContacts";
 
 interface Props {
   contactId:number;
 }
 
 export const UpdateContactForm = ({contactId}:Props) => {
-  const { handleUpdateContact } = useAuth();
+  const { handleUpdateContact } = useContact();
 
   const {
     register,

@@ -108,54 +108,6 @@ export const UserProvider = ({ children }: IChildrenProps) => {
     navigate("/");
   };
 
-  /*  CONTACTS   */
-  const handleSubmitRegisterNewContact = async (formData: IRegisterNewContactFormData ) => {
-    const token = localStorage.getItem("@USERTOKEN");
-
-    try {
-      await baseURL.post("/contacts", formData, {
-        headers: {
-            Authorization: `Bearer ${token}`,
-        },
-      });
-      notifySuccess("Cadastro realizado com sucesso!");
-      navigate(`/contacts`);
-    } catch (error) {
-      notifyFailed("Ocorreu um erro ao realizar o cadastro! Tente novamente.");
-    }
-  };
-
-  const handleUpdateContact = async (contactId:number,formData: IUpdateUserFormData) => {
-    const token = localStorage.getItem("@USERTOKEN")
-    const userId = localStorage.getItem("@USERID")
-    try {
-      await baseURL.patch(`/contacts/${contactId}/users/${userId}`, formData, {
-        headers: {
-            Authorization: `Bearer ${token}`,
-        },
-      });
-      notifySuccess("Atualizamos os dados!");
-    } catch (error) {
-      notifyFailed("Tente novamente mais tarde!");
-    }
-  }; 
-
-  const handleDeleteContact = async (contactId:number) => {
-    const userId = localStorage.getItem("@USERID")
-    const token = localStorage.getItem("@USERTOKEN")
-    try {
-      await baseURL.delete(`/contacts/${contactId}/users/${userId}`,{
-        headers: {
-            Authorization: `Bearer ${token}`,
-        },
-      });
-      notifySuccess("Contato deletado.");
-    } catch (error) {
-      notifyFailed("Ocorreu um erro ao realizar a deleção, tente mais tarde!");
-    }
-  };
-
-
   return (
     <UserContext.Provider
       value={{
@@ -165,10 +117,7 @@ export const UserProvider = ({ children }: IChildrenProps) => {
         handleSubmitRegister,
         handleUpdateUser,
         handleLogout,
-        handleSubmitRegisterNewContact,
         handleDeleteAccount,
-        handleUpdateContact,
-        handleDeleteContact
       }}
     >
       {children}
