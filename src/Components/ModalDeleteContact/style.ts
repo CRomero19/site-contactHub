@@ -15,6 +15,7 @@ export const StyledModalDeleteUser = styled.div`
   font-family: var(--font-family-default);
   .container__modal{
     background-color: white;
+    color:var(--color-grey-900);
     padding: 50px;
   }
   

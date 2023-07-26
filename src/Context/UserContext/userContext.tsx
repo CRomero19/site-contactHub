@@ -129,13 +129,12 @@ export const UserProvider = ({ children }: IChildrenProps) => {
     const token = localStorage.getItem("@USERTOKEN")
     const userId = localStorage.getItem("@USERID")
     try {
-      const response = await baseURL.patch(`/contacts/${contactId}/users/${userId}`, formData, {
+      await baseURL.patch(`/contacts/${contactId}/users/${userId}`, formData, {
         headers: {
             Authorization: `Bearer ${token}`,
         },
       });
       notifySuccess("Atualizamos os dados!");
-      /* atualizar os contatos no react */
     } catch (error) {
       notifyFailed("Tente novamente mais tarde!");
     }
@@ -151,7 +150,6 @@ export const UserProvider = ({ children }: IChildrenProps) => {
         },
       });
       notifySuccess("Contato deletado.");
-      /* SETAR OS CONTATOS NO REACT */
     } catch (error) {
       notifyFailed("Ocorreu um erro ao realizar a deleção, tente mais tarde!");
     }

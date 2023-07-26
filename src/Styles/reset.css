@@ -28,6 +28,9 @@ strong{
 button{
     cursor: pointer;  
 }
+.warning-text{
+    color: red;
+}
 
 textarea:focus, input:focus, select:focus {
     box-shadow: 0 0 0 0;

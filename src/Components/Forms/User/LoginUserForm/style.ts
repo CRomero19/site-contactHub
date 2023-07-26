@@ -8,7 +8,7 @@ export const StyledLoginForm = styled.div`
   font-family: var(--font-family-default);
   h1 {
     margin-bottom: 2rem;
-    font-size: 18px;
+    font-size: 2rem;
     font-weight: 500;
   }
   form {
@@ -27,18 +27,6 @@ export const StyledLoginForm = styled.div`
     width: 90%;
     border-radius: 8px;
   }
-  .divider {
-    display: flex;
-    align-items: center;
-    text-align: center;
-    margin-top: 30px;
-  }
-  .divider .line {
-    flex-grow: 0.5;
-    height: 0.1px;
-    background-color: #cdcfd2;
-  }
-
   .input-password{
     display: flex;
     position: relative;

@@ -10,7 +10,7 @@ export const StyledRegisterForm = styled.div`
 
   h1 {
     margin-bottom: 2rem;
-    font-size: 18px;
+    font-size: 2rem;
     font-weight: 500;
   }
 

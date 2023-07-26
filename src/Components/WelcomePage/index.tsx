@@ -10,7 +10,7 @@ export const WelcomePage = ({form}:Props) => {
   return (
     <StyledWelcomePage>
       
-      <div>
+      <div className="text">
         <h1> ContactHub </h1>
         <p> Simplifique o gerenciamento de contatos com o ContactHub! Cadastre e organize seus contatos em um só lugar, mantendo-se conectado de forma prática. Experimente agora e otimize sua vida! </p>
       </div>

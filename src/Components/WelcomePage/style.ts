@@ -18,5 +18,12 @@ export const StyledWelcomePage = styled.div`
         background-color: var(--color-primary-500);
         display: flex;
         align-items: center;
+        max-width: 90vw;
+    }
+    @media (max-width:1024px) {
+        flex-direction: column;
+        .text{
+            display: none;
+        }
     }
 `;  

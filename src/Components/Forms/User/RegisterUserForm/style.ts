@@ -9,7 +9,7 @@ export const StyledRegisterForm = styled.div`
   color: var(--color-grey-0);
   h1 {
     margin-bottom: 2rem;
-    font-size: 18px;
+    font-size: 2rem;
     font-weight: 500;
   }
 
@@ -30,18 +30,6 @@ export const StyledRegisterForm = styled.div`
     padding: 20px;
     width: 90%;
     border-radius: 8px;
-  }
-
-  .divider {
-    display: flex;
-    align-items: center;
-    text-align: center;
-    margin-top: 30px;
-  }
-  .divider .line {
-    flex-grow: 0.5;
-    height: 0.1px;
-    background-color: #cdcfd2;
   }
 
   .input-password{
